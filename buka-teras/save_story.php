@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($conn->query($query) === TRUE) {
         echo "Cerita berhasil disimpan!";
         
-        // Tambahkan tombol kembali ke menu tema
-        echo "<br><br><a href='themes.php'><button>Kembali ke Menu Tema</button></a>";
+        // Tambahkan tombol kembali ke menu tema dengan tautan ke theme.php
+        echo "<br><br><a href='theme.php'><button>Kembali ke Menu Tema</button></a>";
     } else {
         echo "Error: " . $conn->error;
     }
