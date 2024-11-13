@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validasi input kosong
     if (empty($story_content)) {
-        echo "<script>alert('Cerita tidak boleh kosong.');</script>";
+        echo "Cerita tidak boleh kosong.";
         exit;
     }
 
@@ -15,10 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $query = "INSERT INTO stories (book_id, story_content, created_at) VALUES ($book_id, '$story_content', NOW())";
 
     if ($conn->query($query) === TRUE) {
-        echo "<script>alert('Cerita berhasil disimpan!');</script>";
+        echo "Cerita berhasil disimpan!";
         
         // Tambahkan tombol kembali ke menu tema dengan tautan ke theme.php
-        echo "<br><br><a href='theme.php'><button>Kembali ke Menu Tema</button></a>";
+        echo "<br><br><a href='index.php'><button>Kembali ke Menu Utama</button></a>";
     } else {
         echo "Error: " . $conn->error;
     }
